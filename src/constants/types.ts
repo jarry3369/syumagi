@@ -1,0 +1,36 @@
+export type TColor = TThemeColor | string;
+export type TThemeColor =
+  | "SC01"
+  | "SG00"
+  | "SG01"
+  | "SG01_1"
+  | "SG02"
+  | "SG02_1"
+  | "SG03"
+  | "SG04"
+  | "SG05"
+  | "SG05_1"
+  | "SG06"
+  | "SG07"
+  | "SG08"
+  | "SG09";
+
+export type TStyleName =
+  | "headline1"
+  | "headline2"
+  | "headline3"
+  | "title1"
+  | "title2"
+  | "title3"
+  | "body1"
+  | "body2"
+  | "body3"
+  | "subheadline1"
+  | "subheadline2"
+  | "subheadline3"
+  | "caption1"
+  | "caption2"
+  | "caption3"
+  | "tooltip1"
+  | "tooltip2"
+  | "tooltip3";
