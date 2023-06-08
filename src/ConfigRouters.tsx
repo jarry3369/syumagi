@@ -1,10 +1,11 @@
 import { useRoutes } from "react-router-dom";
+import { Home, Notice, Feed } from "@/pages";
 
 const ConfigRouters = () => {
   const element = useRoutes([
-    { path: "/", element: <div>main</div> },
-    { path: "/notice/", element: <div>notice</div> },
-    { path: "/feed/", element: <div>feed</div> },
+    { path: "/", element: <Home /> },
+    { path: "/notice/", element: <Notice /> },
+    { path: "/feed/", element: <Feed /> },
   ]);
 
   return element;
