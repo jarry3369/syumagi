@@ -1,11 +1,11 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+import { createGlobalStyle } from "styled-components";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+const GlobalStyle = createGlobalStyle`
+:root {
+  ${({ theme }) => ({
+    color: theme.colors.SG00 + "de",
+    backgroundColor: theme.colors.SG02,
+  })}
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -14,29 +14,37 @@
   -webkit-text-size-adjust: 100%;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+a { 
+  ${({ theme }) => ({
+    color: theme.colors.SG00 + "de",
+  })}
+  text-decoration: none;
 }
 
 body {
-  margin: 0;
   display: flex;
+  justify-content: center;
+  align-items: center;
+
   place-items: center;
+  text-align: center;
+  width: inherit;
   min-width: 320px;
   min-height: 100vh;
-}
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  margin: 0 auto;
+
+  overflow-x: hidden;
+   
+  #root {
+    width: 100%;
+  }
 }
 
 button {
+  ${({ theme }) => ({
+    color: theme.colors.SG00 + "de",
+  })}
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -55,15 +63,5 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+`;
+export default GlobalStyle;
