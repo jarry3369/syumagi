@@ -1,4 +1,4 @@
-import { TStyleName } from "@constants/types";
+import { TFontWeight, TStyleName } from "@constants/types";
 import {
   ReactNode,
   forwardRef,
@@ -14,6 +14,7 @@ export interface ITypography {
   /**
    * 텍스트 색  */
   color?: string;
+  weight?: TFontWeight;
   /**
    * 텍스트 스타일 */
   styleName: TStyleName;
@@ -24,12 +25,13 @@ export type TTextProps = ComponentPropsWithRef<"p"> &
   ITypography & {
     align?: string;
   };
-export type THighlightProps = ComponentPropsWithoutRef<"span"> & ITypography;
+export type THighlightProps = ComponentPropsWithoutRef<"span"> &
+  Partial<ITypography>;
 
 export const Text = forwardRef<any, TTextProps>(
-  ({ children, sx, ...props }, ref): ReactElement => {
+  ({ children, sx, weight = "medium", ...props }, ref): ReactElement => {
     return (
-      <S.Text {...props} style={sx} ref={ref}>
+      <S.Text ref={ref} {...{ weight }} style={sx} {...props}>
         {children}
       </S.Text>
     );
@@ -39,7 +41,7 @@ export const Text = forwardRef<any, TTextProps>(
 export const Highlight = ({ children, sx, ...props }: THighlightProps) => {
   return (
     <S.Highlight style={sx} {...props}>
-      {children}
+      {children ?? null}
     </S.Highlight>
   );
 };

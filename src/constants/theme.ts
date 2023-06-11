@@ -22,102 +22,37 @@ const fontStyle: {
     [key: string]: string;
   };
 } = {
-  headline1: {
-    "font-weight": "700",
-    "font-size": "24px",
+  hero: {
+    "font-size": "50px",
+    "line-height": "65px",
+  },
+  headline: {
+    "font-size": "38px",
+    "line-height": "49px",
+  },
+  subheadline: {
+    "font-size": "28px",
     "line-height": "36px",
   },
-  headline2: {
-    "font-weight": "500",
-    "font-size": "24px",
-    "line-height": "36px",
+  title: {
+    "font-size": "22px",
+    "line-height": "33px",
   },
-  headline3: {
-    "font-weight": "400",
-    "font-size": "24px",
-    "line-height": "36px",
+  subtitle: {
+    "font-size": "18px",
+    "line-height": "27px",
   },
-
-  title1: {
-    "font-weight": "700",
-    "font-size": "20px",
-    "line-height": "28px",
-  },
-  title2: {
-    "font-weight": "500",
-    "font-size": "20px",
-    "line-height": "28px",
-  },
-  title3: {
-    "font-weight": "400",
-    "font-size": "20px",
-    "line-height": "28px",
-  },
-
-  body1: {
-    "font-weight": "700",
+  body: {
     "font-size": "16px",
     "line-height": "24px",
   },
-  body2: {
-    "font-weight": "500",
-    "font-size": "16px",
-    "line-height": "24px",
-  },
-  body3: {
-    "font-weight": "400",
-    "font-size": "16px",
-    "line-height": "24px",
-  },
-
-  subheadline1: {
-    "font-weight": "700",
+  caption: {
     "font-size": "14px",
-    "line-height": "22px",
+    "line-height": "21px",
   },
-  subheadline2: {
-    "font-weight": "500",
-    "font-size": "14px",
-    "line-height": "22px",
-  },
-  subheadline3: {
-    "font-weight": "400",
-    "font-size": "14px",
-    "line-height": "22px",
-  },
-
-  caption1: {
-    "font-weight": "700",
+  tooltip: {
     "font-size": "12px",
-    "line-height": "20px",
-  },
-  caption2: {
-    "font-weight": "500",
-    "font-size": "12px",
-    "line-height": "20px",
-  },
-  caption3: {
-    "font-weight": "400",
-    "font-size": "12px",
-    "line-height": "20px",
-  },
-
-  tooltip1: {
-    "font-weight": "700",
-    "font-size": "10px",
-    "line-height": "16px",
-  },
-
-  tooltip2: {
-    "font-weight": "500",
-    "font-size": "10px",
-    "line-height": "16px",
-  },
-
-  tooltip3: {
-    "font-weight": "400",
-    "font-size": "10px",
-    "line-height": "16px",
+    "line-height": "18px",
   },
 };
 const theme = {
