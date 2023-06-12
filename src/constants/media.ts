@@ -1,4 +1,4 @@
-import { css, CSSObject, SimpleInterpolation } from "styled-components";
+import { css } from "styled-components";
 
 type DeviceType = "desktop" | "tablet" | "phone";
 
@@ -11,10 +11,7 @@ const sizes: Record<DeviceType, number> = {
 const media = Object.entries(sizes).reduce((acc, [key, value]) => {
   return {
     ...acc,
-    [key]: (
-      first: CSSObject | TemplateStringsArray,
-      ...interpolations: SimpleInterpolation[]
-    ) => css`
+    [key]: (first: any | TemplateStringsArray, ...interpolations: any[]) => css`
       @media (max-width: ${value}px) {
         ${css(first, ...interpolations)}
       }

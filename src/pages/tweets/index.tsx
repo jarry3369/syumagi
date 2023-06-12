@@ -63,7 +63,9 @@ export const Tweets = () => {
         height: "100%",
       }}
     >
-      <Stack sx={{ background: "green", borderRadius: 12 }}>
+      <Stack
+        sx={{ width: "max-content", background: "green", borderRadius: 12 }}
+      >
         {members.map((member) => {
           return (
             <Stack

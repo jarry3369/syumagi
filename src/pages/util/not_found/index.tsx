@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import * as S from "./style";
 
 import Stack from "@/components/Stack";
-import { Highlight, Text } from "@/components/Typography";
+import { Highlight } from "@/components/Typography";
 
 import imgLogo from "@/assets/image/syumagi_mascot.png";
 

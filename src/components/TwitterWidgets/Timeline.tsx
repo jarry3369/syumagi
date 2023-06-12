@@ -1,4 +1,4 @@
-import { Dispatch, Fragment, SetStateAction, useEffect } from "react";
+import { Dispatch, Fragment, SetStateAction } from "react";
 import { Loading } from "@/pages";
 import { Timeline as Origin } from "react-twitter-widgets";
 import { TimelineProps as OriginType } from "react-twitter-widgets";
@@ -22,8 +22,12 @@ export const Timeline = ({
       align="center"
       sx={
         isFetching
-          ? { width: rest.options?.width, height: "100%" }
+          ? // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
+            { width: rest.options?.width, height: "100%" }
           : {
+              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+              // @ts-ignore
               width: rest.options?.width,
               justifyContent: "start",
               height: "100%",
