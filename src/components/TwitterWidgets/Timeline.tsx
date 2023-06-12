@@ -1,7 +1,8 @@
-import React, { Dispatch, Fragment, SetStateAction, Suspense } from "react";
+import { Dispatch, Fragment, SetStateAction, useEffect } from "react";
 import { Loading } from "@/pages";
 import { Timeline as Origin } from "react-twitter-widgets";
 import { TimelineProps as OriginType } from "react-twitter-widgets";
+import Stack from "../Stack";
 
 type TimelineProps = {
   isFetching: boolean;
@@ -13,45 +14,36 @@ export const Timeline = ({
   setIsFetching,
   ...props
 }: TimelineProps) => {
-  const LoadSkeleton = ({ options }: Pick<OriginType, "options">) => {
-    return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: options?.width,
-          height: options?.height,
-        }}
-      >
-        <Loading />
-      </div>
-    );
-  };
+  const { onLoad: _onLoad, ...rest } = props;
 
-  const { onLoad: _onLoad, options: _options, ...rest } = props;
   return (
-    <Fragment>
-      {/* {isFetching ? <LoadSkeleton options={_options} /> : <Fragment />} */}
+    <Stack
+      justify="center"
+      align="center"
+      sx={
+        isFetching
+          ? { width: rest.options?.width, height: "100%" }
+          : {
+              width: rest.options?.width,
+              justifyContent: "start",
+              height: "100%",
+            }
+      }
+    >
+      {isFetching || !document.getElementsByClassName("twitter-timeline")[0] ? (
+        <Loading />
+      ) : (
+        <Fragment />
+      )}
 
-      <Suspense fallback={<LoadSkeleton options={_options} />}>
-        <Origin
-          onLoad={() => {
-            setIsFetching(false);
-            _onLoad && _onLoad();
-          }}
-          options={
-            isFetching
-              ? {
-                  width: 0,
-                  height: 0,
-                }
-              : _options ?? {}
-          }
-          {...rest}
-        />
-      </Suspense>
-    </Fragment>
+      <Origin
+        onLoad={async () => {
+          if (_onLoad) await _onLoad();
+          setIsFetching(false);
+        }}
+        {...rest}
+      />
+    </Stack>
   );
 };
 
