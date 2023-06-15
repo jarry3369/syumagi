@@ -1,10 +1,4 @@
-import * as S from './style';
-
-export interface DividerProps {
-  vertical?: boolean;
-  color?: string;
-  style?: object;
-}
+import * as S from "./style";
 
 const Divider = (props: DividerProps) => {
   return <S.Divider {...props} />;

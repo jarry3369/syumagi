@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { StackProps } from ".";
 
 export const Stack = styled.div<StackProps>`
   width: 100%;

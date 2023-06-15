@@ -2,8 +2,6 @@ import Divider from "../Divider";
 import * as S from "./style";
 import { Link } from "react-router-dom";
 
-import { TNavContent } from "@/constants/types";
-
 import { LazyImage } from "../Image";
 import Stack from "@/components/Stack";
 

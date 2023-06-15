@@ -1,6 +1,4 @@
 import styled, { keyframes } from "styled-components";
-
-import { LoopProps } from ".";
 import theme from "@/constants/theme";
 
 const dotCarousel = (props: Pick<LoopProps, "color">) => {

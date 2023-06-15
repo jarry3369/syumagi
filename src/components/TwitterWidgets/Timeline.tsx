@@ -1,19 +1,16 @@
-import { Dispatch, Fragment, SetStateAction } from "react";
-import { Loading } from "@/pages";
+import { Fragment } from "react";
 import { Timeline as Origin } from "react-twitter-widgets";
 import { TimelineProps as OriginType } from "react-twitter-widgets";
-import Stack from "../Stack";
 
-type TimelineProps = {
-  isFetching: boolean;
-  setIsFetching: Dispatch<SetStateAction<boolean>>;
-} & OriginType;
+import { Loading } from "@/pages";
+
+import Stack from "@/components/Stack";
 
 export const Timeline = ({
   isFetching,
   setIsFetching,
   ...props
-}: TimelineProps) => {
+}: OriginType & TimelineProps) => {
   const { onLoad: _onLoad, ...rest } = props;
 
   return (

@@ -1,5 +1,5 @@
-export type TColor = TThemeColor | string;
-export type TThemeColor =
+type TColor = TThemeColor | string;
+type TThemeColor =
   | "SC01"
   | "SG00"
   | "SG01"
@@ -15,8 +15,8 @@ export type TThemeColor =
   | "SG08"
   | "SG09";
 
-export type TFontWeight = "demilight" | "medium" | "bold";
-export type TStyleName =
+type TFontWeight = "demilight" | "medium" | "bold";
+type TStyleName =
   | "hero"
   | "headline"
   | "subheadline"
@@ -26,7 +26,7 @@ export type TStyleName =
   | "caption"
   | "tooltip";
 
-export type TNavContent = {
+type TNavContent = {
   path: string;
   label: string;
 };

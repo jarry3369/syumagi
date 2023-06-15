@@ -25,7 +25,8 @@
       "@/*": ["src/*"],
       "@constants/*": ["src/constants/*"],
       "@components/*": ["src/components/*"]
-    }
+    },
+    "typeRoots": ["src/constants"]
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
