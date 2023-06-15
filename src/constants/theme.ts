@@ -1,5 +1,3 @@
-import { TStyleName, TThemeColor } from "./types";
-
 const colors: { [key in TThemeColor]: string } = {
   SC01: "#FFF",
   SG00: "#ffffff",

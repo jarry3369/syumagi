@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { TFontWeight } from "@/constants/types";
-import { THighlightProps, TTextProps } from ".";
 
 const font_weight_mapper: { [key in TFontWeight]: number } = {
   demilight: 300,

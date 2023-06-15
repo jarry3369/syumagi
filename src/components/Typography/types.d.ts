@@ -8,7 +8,7 @@ type TTypography = {
   styleName: TStyleName;
   sx?: CSSProperties;
 };
-type TTextProps = ITypography & {
+type TTextProps = TTypography & {
   align?: string;
 };
-type THighlightProps = Partial<ITypography>;
+type THighlightProps = Partial<TTypography>;

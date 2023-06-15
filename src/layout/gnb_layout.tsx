@@ -2,7 +2,6 @@ import NavigationBar from "@/components/NavigationBar";
 import { Fragment } from "react";
 import { Outlet } from "react-router-dom";
 
-import { TNavContent } from "@/constants/types";
 import Stack from "@/components/Stack";
 
 const nav_contents: Array<TNavContent> = [
