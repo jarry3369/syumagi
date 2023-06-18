@@ -25,8 +25,9 @@ const GnbLayout = () => {
       <NavigationBar items={nav_contents} />
       <Stack
         justify="center"
-        padding={"84px 0 0 "}
-        sx={{ overflow: "scroll", height: "calc(100vh - 84px)" }}
+        // padding={"84px 0 0 "}
+        // sx={{ height: "calc(100vh - 84px)" }}
+        sx={{ height: "100vh" }}
       >
         <Outlet />
       </Stack>

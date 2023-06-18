@@ -15,7 +15,8 @@ const NavigationContainer = styled(Stack)`
   width: -webkit-fill-available;
 
   ${({ theme }) => ({
-    backgroundColor: theme.colors.SG02_1,
+    backgroundColor: "transparent",
+    // backgroundColor: theme.colors.SG02_1,
   })}
 
   ${media.tablet`
