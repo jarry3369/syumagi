@@ -1,10 +1,17 @@
 import { createGlobalStyle } from "styled-components";
+import { media } from "@/constants/media";
 
 const GlobalStyle = createGlobalStyle`
+  ${media.sm`
+    :root {
+      --page-padding-horizontal: 1.5rem;
+    }
+  `}
 :root {
+
   ${({ theme }) => ({
     color: theme.colors.SG00 + "de",
-    backgroundColor: theme.colors.SG02,
+    backgroundColor: theme.colors.SG09,
   })}
 
   font-synthesis: none;
@@ -12,13 +19,21 @@ const GlobalStyle = createGlobalStyle`
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+
+  --page-padding-horizontal: 3.75rem;
 }
+
+
 
 a { 
   ${({ theme }) => ({
     color: theme.colors.SG00 + "de",
   })}
   text-decoration: none;
+}
+p {
+  margin : 0;
 }
 
 body {
@@ -61,6 +76,16 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.sc_padding {
+  padding-left: calc(
+    env(safe-area-inset-left) + var(--page-padding-horizontal)
+  );
+  padding-right: calc(
+    env(safe-area-inset-right) + var(--page-padding-horizontal)
+  );
+  box-sizing: border-box;
 }
 
 `;
