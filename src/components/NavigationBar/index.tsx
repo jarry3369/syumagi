@@ -18,7 +18,7 @@ const NavigationBar = ({ items }: { items: Array<TNavContent> }) => {
         direction="row"
         spacing={10}
         sx={{ width: "max-content" }}
-        divider={<Divider vertical={true} style={{ height: "1rem" }} />}
+        divider={<Divider vertical style={{ height: "1rem" }} />}
       >
         {items.map((item, index) => {
           const { path, label } = item;

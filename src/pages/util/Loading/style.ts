@@ -4,14 +4,14 @@ import { media } from "@/constants/media";
 import { styled } from "styled-components";
 
 const Image = styled(LazyImage)`
-  ${media.tablet`
+  ${media.md`
     width: 18.75rem;
     height: 18.75rem;
   `}
 `;
 
 const CommentWrapper = styled(Stack)`
-  ${media.tablet`
+  ${media.md`
   flex-direction : column-reverse
   `}
 `;
