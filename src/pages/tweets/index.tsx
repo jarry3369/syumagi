@@ -20,25 +20,22 @@ const members: Array<TMember> = [
     name: "終電間際≦オンライン。",
     i_id: "syumagi_",
     t_id: "syumagi_",
-    y_id: undefined,
+    y_id: "@syumagi_",
   },
   {
     name: "春茶",
-    i_id: "HARUTYA1226",
     t_id: "HARUTYA1226",
-    y_id: undefined,
+    i_id: "harutya_",
+    y_id: "@harutya",
   },
   {
     name: "sakuma",
-    i_id: "_Sakuma0331",
     t_id: "_Sakuma0331",
-    y_id: undefined,
   },
   {
     name: "ナナカワ",
-    i_id: "7_kawa",
     t_id: "7_kawa",
-    y_id: undefined,
+    i_id: "7_kawa",
   },
 ];
 
@@ -60,7 +57,7 @@ export const Tweets = () => {
         width: "max-content",
         background: "red",
         borderRadius: 12,
-        height: "100%",
+        height: "80vmin",
       }}
     >
       <Stack
@@ -69,18 +66,41 @@ export const Tweets = () => {
         {members.map((member) => {
           return (
             <Stack
+              padding={20}
               align="start"
               onClick={() => {
-                setIsFetching(true);
-                setCurrentTarget(member.t_id);
+                if (currentTarget !== member.t_id) {
+                  setIsFetching(true);
+                  setCurrentTarget(member.t_id);
+                }
               }}
-              style={{ padding: 20, cursor: "pointer" }}
             >
               {member.name}
-              <Stack direction="row" padding={6} spacing={4} divider={"|"}>
-                <AiFillTwitterCircle size={30} />
-                <AiFillYoutube size={30} />
-                <AiFillInstagram size={30} />
+              <Stack direction="row" padding={6} spacing={12}>
+                {member.t_id && (
+                  <a
+                    href={`https://twitter.com/${member.t_id}`}
+                    target="_blank"
+                  >
+                    <AiFillTwitterCircle size={30} />
+                  </a>
+                )}
+                {member.i_id && (
+                  <a
+                    href={`https://instagram.com/${member.i_id}`}
+                    target="_blank"
+                  >
+                    <AiFillInstagram size={30} />
+                  </a>
+                )}
+                {member.y_id && (
+                  <a
+                    href={`https://youtube.com/${member.y_id}`}
+                    target="_blank"
+                  >
+                    <AiFillYoutube size={30} />
+                  </a>
+                )}
               </Stack>
             </Stack>
           );
