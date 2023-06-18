@@ -14,7 +14,7 @@ const NavigationContainer = styled(Stack)`
   width: 100%;
   width: -webkit-fill-available;
 
-  ${({ theme }) => ({
+  ${({}) => ({
     backgroundColor: "transparent",
     // backgroundColor: theme.colors.SG02_1,
   })}
